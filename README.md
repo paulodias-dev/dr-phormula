@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Landing Page - Dr Phormula
 
-# Run and deploy your AI Studio app
+## Tecnologias Utilizadas
+- React
+- TypeScript
+- Tailwind CSS
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/1b5c1c3b-fd10-45b8-91e8-557f6affba31
-
-## Run Locally
+## Rodar projeto localmente
 
 **Prerequisites:**  Node.js
 
-
-1. Install dependencies:
+1. Instalar dependências:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+3. Executar o app:
    `npm run dev`
+
+
+## Desenvolvido por Paulo Roberto Dias
+## Fluxo sistemas e tecnologia
+## (79) 9 8129-1760
+
+## [www.fluxosistemas.com.br](http://www.fluxosistemas.com.br)
+
+© Todos os direitos reservados. 2026
