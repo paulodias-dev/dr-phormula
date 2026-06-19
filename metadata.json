@@ -1,0 +1,6 @@
+{
+  "name": "Dr.Phormula",
+  "description": "Landing page profissional para a Farmácia de Manipulação Dr.Phormula. Saúde na medida exata, envio de receitas online e orçamentos integrados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

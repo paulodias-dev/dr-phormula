@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #006877;
+  --color-primary-container: #00bdd6;
+  --color-on-primary-container: #004752;
+  --color-secondary: #345ea2;
+  --color-secondary-container: #8cb3fe;
+  --color-on-secondary-container: #124487;
+  --color-surface: #f8f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #3c494c;
+  --color-outline: #6c797d;
+  --color-outline-variant: #bbc9cc;
+}
+
+/* Custom Glassmorphism style */
+.glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Ambient drop shadow */
+.ambient-shadow {
+  box-shadow: 0 10px 25px rgba(0, 59, 126, 0.05);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-anim {
+  animation: float 5s ease-in-out infinite;
+}
