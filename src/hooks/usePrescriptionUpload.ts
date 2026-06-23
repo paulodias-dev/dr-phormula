@@ -1,6 +1,27 @@
 import React, { useState, ChangeEvent, FormEvent, DragEvent } from "react";
 import { PrescriptionFormData, UploadState } from "../types";
 
+const readFileAsBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      if (typeof reader.result !== "string") {
+        reject(new Error("Não foi possível ler o arquivo selecionado."));
+        return;
+      }
+
+      resolve(reader.result.split(",").pop() || "");
+    };
+
+    reader.onerror = () => {
+      reject(new Error("Erro ao processar o arquivo da receita."));
+    };
+
+    reader.readAsDataURL(file);
+  });
+};
+
 export function usePrescriptionUpload() {
   const [formData, setFormData] = useState<PrescriptionFormData>({
     fullName: "",
@@ -126,35 +147,70 @@ export function usePrescriptionUpload() {
       success: false,
       error: null,
     });
-    setUploadProgress(10);
+    setUploadProgress(15);
+
+    let interval: ReturnType<typeof setInterval> | null = null;
 
     try {
-      const interval = setInterval(() => {
+      const fileContent = await readFileAsBase64(formData.file);
+      setUploadProgress(40);
+
+      interval = setInterval(() => {
         setUploadProgress((prev) => {
           if (prev >= 90) {
-            clearInterval(interval);
+            if (interval) clearInterval(interval);
             return 90;
           }
-          return prev + 20;
+          return prev + 10;
         });
-      }, 300);
+      }, 350);
 
-      await new Promise((resolve) => setTimeout(resolve, 1800));
-      clearInterval(interval);
+      const response = await fetch("/api/prescriptions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName.trim(),
+          whatsapp: formData.whatsapp,
+          notes: formData.notes.trim(),
+          fileName: formData.file.name,
+          fileType: formData.file.type,
+          fileContent,
+        }),
+      });
+
+      const result = (await response.json().catch(() => null)) as {
+        message?: string;
+        estimatedTime?: string;
+        messageId?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(result?.message || "Não foi possível enviar a receita agora.");
+      }
+
+      if (interval) clearInterval(interval);
       setUploadProgress(100);
 
       setUploadState({
         loading: false,
         success: true,
         error: null,
-        estimatedTime: "15 a 30 minutos",
-        uploadedUrl: "recipe_secure_uuid_stored.pdf",
+        estimatedTime: result?.estimatedTime || "15 a 30 minutos",
+        uploadedUrl: result?.messageId || formData.file.name,
       });
-    } catch {
+    } catch (error) {
+      if (interval) clearInterval(interval);
+      setUploadProgress(0);
+
       setUploadState({
         loading: false,
         success: false,
-        error: "Erro na conexão. Verifique sua rede e tente enviar novamente.",
+        error:
+          error instanceof Error
+            ? error.message
+            : "Erro na conexão. Verifique sua rede e tente enviar novamente.",
       });
     }
   };
