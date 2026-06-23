@@ -37,9 +37,12 @@ export default function ProcessTimeline() {
           <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/20 ambient-shadow">
             <img
               alt="Farmacêutico manipulando fórmula com absoluto controle estéril em laboratório"
-              referrerPolicy="no-referrer"
               className="w-full h-full object-cover filter brightness-95"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5dETbyUu45sIZzZ18nSvYEOOBQmplHahZrFjl6smoLvHL7GA4Ctdcx7rLfgR9qNM3vKtf02YVDZi0htS_XKdKzLKUu52SCqJdr_FssdwQIWoQo229qjRQfpAq7AQIByU4FCuI4_YM7QGrVeDVb3Siv3WS3189TGotfDuyv6jzGygRU8_2fJeG1QQ2HScM4_r1L9Wfbe9FL736uj0H3h4omNSZVfiX2ZzdrVraDuxJWfTxIFwx3uI6iOpvcf6Gkjo9-KZ-CYQRLjU"
+              src="/images/processo-laboratorio.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
             />
             
             {/* Soft Translucent macOS overlay banner */}
@@ -90,9 +93,9 @@ export default function ProcessTimeline() {
 
                 {/* Card describing step */}
                 <div className="bg-white p-6 rounded-2xl border border-outline-variant/20 shadow-sm group-hover:shadow-md group-hover:translate-x-1.5 transition-all duration-250 flex-1 text-left">
-                  <h4 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
+                  <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
                     {step.title}
-                  </h4>
+                  </h3>
                   <p className="text-on-surface-variant text-sm font-light leading-relaxed">
                     {step.description}
                   </p>

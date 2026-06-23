@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="background" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00bdd6"/>
+      <stop offset="1" stop-color="#345ea2"/>
+    </linearGradient>
+    <linearGradient id="capsule" x1="32" y1="15" x2="32" y2="49" gradientUnits="userSpaceOnUse">
+      <stop offset="0.48" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#0a84ba"/>
+      <stop offset="1" stop-color="#123f96"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#background)"/>
+  <rect x="22" y="11" width="20" height="42" rx="10" fill="url(#capsule)" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M23 32h18" stroke="#ffffff" stroke-width="2" opacity="0.9"/>
+</svg>
+

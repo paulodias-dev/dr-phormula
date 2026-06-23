@@ -47,6 +47,14 @@ Observações importantes:
 - Em produção, o projeto precisa rodar em um ambiente Node.js, pois hospedagem apenas estática não executa o endpoint `/api/prescriptions`.
 - Após alterar dependências, rode `npm install` para atualizar o `package-lock.json` localmente.
 
+## SEO e compartilhamento social
+
+- Os padrões de SEO ficam centralizados em `src/config/seo.config.ts`.
+- O `index.html` mantém as tags essenciais estáticas para WhatsApp, Instagram e outros crawlers que não executam JavaScript.
+- Antes da publicação, preencha no arquivo de configuração o token real do Google Search Console e os perfis sociais oficiais.
+- Adicione telefone, redes sociais e coordenadas ao JSON-LD somente após validar os dados oficiais da empresa.
+- `robots.txt`, `sitemap.xml`, manifest, ícones e a imagem Open Graph estão na pasta `public`.
+
 ## Desenvolvido por Paulo Roberto Dias
 ## Fluxo sistemas e tecnologia
 ## (79) 9 8129-1760

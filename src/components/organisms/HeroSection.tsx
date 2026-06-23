@@ -99,14 +99,18 @@ export default function HeroSection() {
               
               <img
                 alt="Alta tecnologia e precisão de laboratório de manipulação"
-                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-2xl filter brightness-95"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAor4zS4BK-fPMbaePxowyR7fV7_yZLVcFTI0TQW4amNZWX9vLhgprCjAr_XueXaZU3BchXIMMZ2KN0UWaqA0QdQMjoOtnNway5HUF9xBIHla-aAciOTa-P_OEZgSWbRcw0EvDxlRDLc1F7gW08RpeGhUFbFrevxDQt7lbQKhwxLIafTQlKcu_JwATE9QQYF2V5VPkqa7j30ZKzQxSVC-_E2-Eusomi6UxNMLFkWhvHty4RMIuJQtBEc-b0vk68q5Jdi9PLdLEjKxE"
+                src="/images/hero-laboratorio.webp"
+                width="960"
+                height="720"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
               
               {/* Overlapping badge */}
               <div className="absolute bottom-6 left-6 z-20 glass p-4 rounded-2xl border border-white/20 shadow-lg flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
                   24h
                 </div>
                 <div className="text-xs text-left">

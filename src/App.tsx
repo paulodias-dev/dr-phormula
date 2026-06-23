@@ -7,10 +7,14 @@ import ProcessTimeline from "./components/organisms/ProcessTimeline";
 import PrescriptionForm from "./components/organisms/PrescriptionForm";
 import TrustPartners from "./components/organisms/TrustPartners";
 import Footer from "./components/organisms/Footer";
+import SEO from "./components/SEO";
+import { homePageStructuredData } from "./seo/structuredData";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-surface font-sans text-on-surface flex flex-col transition-colors duration-300 antialiased overflow-x-hidden selection:bg-primary-container/20 selection:text-primary">
+      <SEO jsonLd={homePageStructuredData} />
+
       {/* Premium Translucent Header */}
       <Header />
 

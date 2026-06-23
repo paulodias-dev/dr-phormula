@@ -54,11 +54,13 @@ export default function Header() {
           className="flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.02]"
         >
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOdAvVeI5hns8GD4n9IzSmHAubFeH_o-vfncItUegedlXHxbvso_iYRawE3xILXAhNP21MJiJrbhUUDshb9vIMAJtDMPsALwsIl58t7GUbaSrFgFsyj7hu82S99AyCCWmtnr_z1QgK_mYTU21L7Et6iQrU61G68zklOZ1NI7_22jSsyGqnAedqymoRtQge4Symspx_XkEU5f-P_vbdJ5GZXbaglRQg4KhpdT1Ho8vcT3ZtDE2fiM1weFzFPYLsDdutklVt5Xf3nsw"
+            src="/images/logo-dr-phormula-ui.webp"
             alt="Dr.Phormula - Saúde na Medida Exata"
             className="h-12 w-auto object-contain mix-blend-multiply"
             id="header-logo-img"
-            referrerPolicy="no-referrer"
+            width="256"
+            height="108"
+            fetchPriority="high"
           />
         </a>
 

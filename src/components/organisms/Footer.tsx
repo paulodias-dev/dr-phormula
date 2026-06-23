@@ -1,5 +1,21 @@
 import React, { MouseEvent } from "react";
-import { Pill, Mail, Phone, MapPin, Clock, Instagram, Send, ShieldAlert, HeartHandshake } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, HeartHandshake } from "lucide-react";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   const handleScrollToTop = (e: MouseEvent) => {
@@ -39,14 +55,16 @@ export default function Footer() {
             className="inline-flex p-3 bg-white rounded-xl shadow-md hover:scale-[1.02] active:scale-98 transition-all duration-200"
           >
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOdAvVeI5hns8GD4n9IzSmHAubFeH_o-vfncItUegedlXHxbvso_iYRawE3xILXAhNP21MJiJrbhUUDshb9vIMAJtDMPsALwsIl58t7GUbaSrFgFsyj7hu82S99AyCCWmtnr_z1QgK_mYTU21L7Et6iQrU61G68zklOZ1NI7_22jSsyGqnAedqymoRtQge4Symspx_XkEU5f-P_vbdJ5GZXbaglRQg4KhpdT1Ho8vcT3ZtDE2fiM1weFzFPYLsDdutklVt5Xf3nsw"
+              src="/images/logo-dr-phormula-ui.webp"
               alt="Dr.Phormula - Saúde na Medida Exata"
               className="h-10 w-auto object-contain"
               id="footer-logo-img"
-              referrerPolicy="no-referrer"
+              width="256"
+              height="108"
+              loading="lazy"
             />
           </a>
-          <p className="text-white/70 text-sm leading-relaxed font-light">
+          <p className="text-white/85 text-sm leading-relaxed font-light">
             Cuidado personalizado, segurança técnica certificada e a exatidão farmacêutica ideal a serviço da sua saúde e qualidade de vida.
           </p>
           <div className="flex gap-3">
@@ -57,7 +75,7 @@ export default function Footer() {
               className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all"
               aria-label="Siga-nos no Instagram"
             >
-              <Instagram className="w-5 h-5" />
+              <InstagramIcon className="w-5 h-5" />
             </a>
             <a
               href="https://wa.me/557930000000"
@@ -73,15 +91,15 @@ export default function Footer() {
 
         {/* Quick Links navigation */}
         <div className="space-y-6">
-          <h4 className="text-lg font-bold text-white border-b border-white/10 pb-2">
+          <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Navegação
-          </h4>
+          </h2>
           <ul className="space-y-3.5 text-sm">
             <li>
               <a
                 href="#quality"
                 onClick={(e) => handleScrollToSection(e, "#quality")}
-                className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
+                className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
                 Qualidade Técnica
               </a>
@@ -90,7 +108,7 @@ export default function Footer() {
               <a
                 href="#services"
                 onClick={(e) => handleScrollToSection(e, "#services")}
-                className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
+                className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
                 Especialidades
               </a>
@@ -99,7 +117,7 @@ export default function Footer() {
               <a
                 href="#process"
                 onClick={(e) => handleScrollToSection(e, "#process")}
-                className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
+                className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
                 Como Funciona seu Pedido
               </a>
@@ -108,7 +126,7 @@ export default function Footer() {
               <a
                 href="#upload"
                 onClick={(e) => handleScrollToSection(e, "#upload")}
-                className="text-white/70 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
+                className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
                 Enviar Receita Online
               </a>
@@ -118,13 +136,13 @@ export default function Footer() {
 
         {/* Contact info detail */}
         <div className="space-y-6 text-left">
-          <h4 className="text-lg font-bold text-white border-b border-white/10 pb-2">
+          <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Contato & Endereço
-          </h4>
+          </h2>
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-primary-container shrink-0 mt-0.5" />
-              <span className="text-white/70 font-light">
+              <span className="text-white/85 font-light">
                 Avenida Pedro Paes de Azevedo, 700
                 <br />
                 Salgado Filho — Aracaju, SE
@@ -132,30 +150,30 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-primary-container shrink-0" />
-              <span className="text-white/70 font-light">(79) 3000-0000</span>
+              <span className="text-white/85 font-light">(79) 3000-0000</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-primary-container shrink-0" />
-              <span className="text-white/70 font-light">contato@drphormula.com.br</span>
+              <span className="text-white/85 font-light">contato@drphormula.com.br</span>
             </li>
           </ul>
         </div>
 
         {/* Timing calendar and Technical Resp. responsibility */}
         <div className="space-y-6">
-          <h4 className="text-lg font-bold text-white border-b border-white/10 pb-2">
+          <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Expediente
-          </h4>
+          </h2>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 text-white/70 font-light">
+            <li className="flex items-center gap-2 text-white/85 font-light">
               <Clock className="w-4 h-4 text-primary-container" />
               <span>Segunda à Sexta: 08:00 às 19:00</span>
             </li>
-            <li className="flex items-center gap-2 text-white/70 font-light">
+            <li className="flex items-center gap-2 text-white/85 font-light">
               <Clock className="w-4 h-4 text-primary-container" />
               <span>Sábado: 08:00 às 13:00</span>
             </li>
-            <li className="flex items-center gap-2 text-white/50 font-light">
+            <li className="flex items-center gap-2 text-white/75 font-light">
               <Clock className="w-4 h-4 opacity-50" />
               <span>Domingos e Feriados: Fechado</span>
             </li>
@@ -168,14 +186,14 @@ export default function Footer() {
               <span>Farmacêutico Responsável</span>
             </div>
             <p className="text-white/90">Dr. Ricardo Macedo Santos</p>
-            <p className="text-white/60 font-light">CRF/SE nº 1234 • CRF Regional</p>
+            <p className="text-white/75 font-light">CRF/SE nº 1234 • CRF Regional</p>
           </div>
         </div>
 
       </div>
 
       {/* Copy definitions line bottom */}
-      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50 relative z-10 text-left">
+      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/90 relative z-10 text-left">
         <p>© 2026 Dr.Phormula. Precision Compounding Pharmacy. Todos os direitos reservados.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>

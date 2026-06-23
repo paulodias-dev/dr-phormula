@@ -178,8 +178,18 @@ app.post("/api/prescriptions", async (req, res) => {
 if (isProduction) {
   const distPath = path.resolve(__dirname, "dist");
 
-  app.use(express.static(distPath));
-  app.get("*", (_req, res) => {
+  app.use(
+    express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (/[/\\]assets[/\\].+\.[a-z0-9]{8}\.(css|js)$/i.test(filePath)) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (/\.(?:avif|gif|ico|jpe?g|png|svg|webp|woff2)$/i.test(filePath)) {
+          res.setHeader("Cache-Control", "public, max-age=604800");
+        }
+      },
+    })
+  );
+  app.get("/{*splat}", (_req, res) => {
     const indexPath = path.join(distPath, "index.html");
 
     if (fs.existsSync(indexPath)) {
