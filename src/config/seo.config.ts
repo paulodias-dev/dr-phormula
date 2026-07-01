@@ -1,19 +1,20 @@
 const siteUrl = "https://drphormulabrasil.com.br";
 
 export const seoConfig = {
-  title: "Dr.Phormula | Farmácia de Manipulação em Aracaju",
+  title: "Dr.Phormula | Saúde na medida exata",
   titleTemplate: "%s | Dr.Phormula",
   description:
-    "Farmácia de manipulação em Aracaju com fórmulas personalizadas, rigor técnico e envio de receitas online para cuidar da sua saúde com precisão.",
+    "Farmácia de manipulação com fórmulas personalizadas, rigor farmacêutico, tecnologia, atendimento humanizado e orçamento online para pacientes e prescritores.",
   keywords: [
     "farmácia de manipulação",
-    "farmácia de manipulação em Aracaju",
     "fórmulas manipuladas",
     "medicamentos personalizados",
+    "orçamento de fórmula manipulada",
     "enviar receita online",
     "suplementação personalizada",
-    "fitoterápicos manipulados",
-    "dermocosméticos manipulados",
+    "farmácia magistral",
+    "atendimento farmacêutico",
+    "suporte ao prescritor",
   ],
   author: "Dr.Phormula",
   siteName: "Dr.Phormula",
@@ -26,7 +27,7 @@ export const seoConfig = {
   openGraph: {
     title: "Dr.Phormula | Saúde na medida exata",
     description:
-      "Fórmulas manipuladas com rigor técnico e atendimento personalizado em Aracaju. Envie sua receita online.",
+      "Fórmulas manipuladas com segurança, precisão, qualidade e atendimento humanizado. Envie sua receita e solicite seu orçamento online.",
     url: siteUrl,
     siteName: "Dr.Phormula",
     type: "website",
@@ -55,4 +56,3 @@ export const seoConfig = {
 } as const;
 
 export type SeoConfig = typeof seoConfig;
-
