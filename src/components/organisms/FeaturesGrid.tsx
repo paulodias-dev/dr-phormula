@@ -100,16 +100,29 @@ export default function FeaturesGrid() {
               ))}
             </div>
 
-            <div className="lg:col-span-3 rounded-3xl bg-secondary text-white p-7 flex flex-col justify-between min-h-[220px] shadow-xl">
-              <div>
-                <h3 className="text-2xl font-black uppercase leading-tight">Compromisso com a sua saúde</h3>
-                <p className="text-white/85 text-sm leading-relaxed mt-4">
-                  Cada fórmula é única. Cada paciente é especial. Nosso compromisso é entregar o melhor para você.
-                </p>
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-primary-container text-sm font-bold">
-                <Truck className="w-5 h-5" />
-                <span>Envio para todo o Brasil</span>
+            <div className="lg:col-span-3 relative overflow-hidden rounded-3xl text-white min-h-[280px] shadow-xl">
+              <img
+                src="/images/banner-compromisso-v1.webp"
+                alt="Farmacêutica conferindo uma prescrição e preparando um tratamento personalizado"
+                className="absolute inset-0 h-full w-full object-cover object-[72%_center]"
+                width="1024"
+                height="1536"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/72 to-black/58" />
+
+              <div className="relative z-10 flex h-full min-h-[280px] flex-col justify-between p-7">
+                <div>
+                  <h3 className="text-2xl font-black uppercase leading-tight">Compromisso com a sua saúde</h3>
+                  <p className="text-white/90 text-sm leading-relaxed mt-4 max-w-[18rem]">
+                    Cada fórmula é única. Cada paciente é especial. Nosso compromisso é entregar o melhor para você.
+                  </p>
+                </div>
+                <div className="mt-6 inline-flex items-center gap-2 text-primary-container text-sm font-bold">
+                  <Truck className="w-5 h-5" />
+                  <span>Envio para todo o Brasil</span>
+                </div>
               </div>
             </div>
           </div>

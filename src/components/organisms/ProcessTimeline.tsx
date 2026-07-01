@@ -31,9 +31,9 @@ export default function ProcessTimeline() {
               <img
                 alt="Processo técnico de manipulação farmacêutica em laboratório"
                 className="w-full h-full object-cover rounded-[1.5rem] brightness-105"
-                src="/images/processo-laboratorio.webp"
-                width="720"
-                height="900"
+                src="/images/processo-laboratorio-v2.webp"
+                width="1024"
+                height="1536"
                 loading="lazy"
                 decoding="async"
               />
