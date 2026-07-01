@@ -1,9 +1,9 @@
-import React, { MouseEvent } from "react";
-import { ShieldCheck, ArrowRight, MessageSquare, FileSpreadsheet } from "lucide-react";
+import { MouseEvent } from "react";
+import { ArrowRight, CheckCircle2, FileSpreadsheet, MessageSquare, ShieldCheck } from "lucide-react";
 import Button from "../atoms/Button";
 
 export default function HeroSection() {
-  const handleScrollToUpload = (e: MouseEvent) => {
+  const handleScrollToUpload = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const element = document.querySelector("#upload");
     if (element) {
@@ -17,33 +17,54 @@ export default function HeroSection() {
     }
   };
 
+  const trustItems = [
+    {
+      title: "Segurança",
+      description: "Processos rigorosos e controle de qualidade.",
+    },
+    {
+      title: "Tecnologia",
+      description: "Equipamentos modernos e equipe farmacêutica especializada.",
+    },
+    {
+      title: "Confiança",
+      description: "Cuidado personalizado em cada etapa do atendimento.",
+    },
+  ];
+
+  const quickBenefits = [
+    "Atendimento Humanizado",
+    "Manipulação com Precisão",
+    "Matérias-primas Selecionadas",
+    "Agilidade no Orçamento e Entrega",
+  ];
+
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 bg-gradient-to-br from-surface via-surface-container-low to-surface-container-high/40 min-h-[90vh] flex items-center">
-      {/* Decorative ambient background blur vectors */}
-      <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/10 w-[450px]. h-[450px] bg-secondary-container/10 rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative overflow-hidden pt-28 lg:pt-24 bg-gradient-to-br from-white via-surface to-surface-container-low min-h-[92vh] flex items-center border-b border-outline-variant/20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,189,214,0.16),transparent_34%),radial-gradient(circle_at_12%_18%,rgba(52,94,162,0.12),transparent_30%)] pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-1/2 hidden lg:block bg-gradient-to-l from-surface-container-high/80 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Main Hero Copywrite */}
-          <div className="space-y-8 lg:col-span-6 text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs tracking-wider uppercase animate-fade-in">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="space-y-7 lg:col-span-6 text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs tracking-[0.22em] uppercase">
               <ShieldCheck className="w-4 h-4 text-primary" />
-              <span>Farmácia de Manipulação Certificada ANVISA</span>
+              <span>Saúde na medida exata</span>
             </div>
-            
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface tracking-tight leading-[1.1] max-w-2xl">
-                Saúde na <span className="text-primary bg-clip-text bg-gradient-to-r from-primary to-primary-container">medida exata.</span>
+
+            <div className="space-y-5">
+              <p className="text-secondary text-lg lg:text-xl font-bold tracking-tight">
+                Cada fórmula é única. Cada paciente também.
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-secondary tracking-tight leading-[1.05] max-w-2xl">
+                Fórmulas manipuladas com segurança, precisão e qualidade.
               </h1>
-              <p className="text-on-surface-variant text-lg lg:text-xl font-light leading-relaxed max-w-lg">
-                Sua fórmula manipulada por especialistas com precisão molecular, segurança técnica e rapidez. Soluções personalizadas desenhadas estritamente para o seu bem-estar.
+              <p className="text-on-surface-variant text-base lg:text-lg leading-relaxed max-w-2xl">
+                Na Dr.Phormula, unimos rigor farmacêutico, tecnologia e atendimento humanizado para produzir fórmulas manipuladas com segurança, precisão e qualidade em cada etapa.
               </p>
             </div>
 
-            {/* Tactile conversion triggers */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row gap-4 pt-1">
               <Button
                 variant="primary"
                 size="lg"
@@ -53,53 +74,33 @@ export default function HeroSection() {
               >
                 Enviar Receita
               </Button>
-              <a
-                href="https://wa.me/557930000000?text=Olá, Dr. Phormula! Gostaria de falar com um de seus farmacêuticos especialistas sobre uma fórmula."
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handleScrollToUpload}
+                leftIcon={<MessageSquare className="w-5 h-5" />}
               >
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full"
-                  leftIcon={<MessageSquare className="w-5 h-5" />}
-                >
-                  Falar com Especialista
-                </Button>
-              </a>
+                Solicitar Orçamento
+              </Button>
             </div>
 
-            {/* Core features indicators under Hero */}
-            <div className="pt-6 border-t border-outline-variant/30 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-semibold text-on-surface-variant/80">
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 bg-primary-container rounded-full" />
-                <span>Rigoroso Controle de Insumos</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 bg-primary-container rounded-full" />
-                <span>Atendimento Consultivo</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 bg-primary-container rounded-full" />
-                <span>Laboratório de Última Geração</span>
-              </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-6 border-t border-outline-variant/30">
+              {quickBenefits.map((benefit) => (
+                <div key={benefit} className="flex items-start gap-2 text-xs font-semibold text-on-surface-variant">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <span>{benefit}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Visual Showcase - Mac-style overlapping frame with subtle float interaction */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-primary-container/5 rounded-full blur-[90px] animate-pulse duration-[6s] pointer-events-none" />
-            
-            <div className="relative w-full max-w-lg aspect-square sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-white/50 p-2 float-anim ambient-shadow">
-              <div className="absolute top-4 left-4 z-20 flex gap-1.5 p-1 rounded-full bg-white/60 backdrop-blur-md border border-white/20">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-              </div>
-              
+            <div className="absolute inset-0 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="relative w-full max-w-2xl rounded-[2rem] overflow-hidden border border-white/70 shadow-2xl bg-white p-2 ambient-shadow">
               <img
-                alt="Alta tecnologia e precisão de laboratório de manipulação"
-                className="w-full h-full object-cover rounded-2xl filter brightness-95"
+                alt="Farmacêutica manipulando fórmula em laboratório moderno"
+                className="w-full h-[360px] sm:h-[460px] object-cover rounded-[1.5rem] brightness-105"
                 src="/images/hero-laboratorio.webp"
                 width="960"
                 height="720"
@@ -107,20 +108,28 @@ export default function HeroSection() {
                 fetchPriority="high"
                 decoding="async"
               />
-              
-              {/* Overlapping badge */}
-              <div className="absolute bottom-6 left-6 z-20 glass p-4 rounded-2xl border border-white/20 shadow-lg flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
-                  24h
-                </div>
-                <div className="text-xs text-left">
-                  <p className="font-extrabold text-on-surface">Entrega Rápida</p>
-                  <p className="text-on-surface-variant font-light">Envios seguros em todo estado.</p>
-                </div>
+
+              <div className="absolute top-6 right-6 w-[250px] max-w-[70%] rounded-3xl bg-white/92 backdrop-blur-md border border-white/80 shadow-xl p-5 space-y-4 hidden sm:block">
+                {trustItems.map((item, index) => (
+                  <div key={item.title} className={`${index > 0 ? "border-t border-outline-variant/30 pt-4" : ""} flex gap-3 text-left`}>
+                    <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-black text-secondary text-sm uppercase tracking-wide">{item.title}</p>
+                      <p className="text-xs text-on-surface-variant leading-relaxed mt-1">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute left-6 bottom-6 rounded-2xl bg-secondary text-white p-5 shadow-xl max-w-[280px] hidden sm:block">
+                <p className="text-xs uppercase tracking-[0.22em] font-bold text-primary-container">Compromisso</p>
+                <p className="text-xl font-black mt-1">Cuidado do início ao fim</p>
+                <p className="text-white/80 text-xs leading-relaxed mt-2">Cada prescrição é analisada com atenção por uma equipe qualificada.</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
