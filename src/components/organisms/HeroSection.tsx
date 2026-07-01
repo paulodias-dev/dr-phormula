@@ -101,9 +101,9 @@ export default function HeroSection() {
               <img
                 alt="Farmacêutica manipulando fórmula em laboratório moderno"
                 className="w-full h-[360px] sm:h-[460px] object-cover rounded-[1.5rem] brightness-105"
-                src="/images/hero-laboratorio.webp"
-                width="960"
-                height="720"
+                src="/images/hero-laboratorio-v2.webp"
+                width="1536"
+                height="1024"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
