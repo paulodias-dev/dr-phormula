@@ -39,23 +39,22 @@ export default function PrescriptionForm() {
   };
 
   return (
-    <section id="upload" className="py-20 bg-surface">
+    <section id="upload" className="py-20 lg:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/30 flex flex-col lg:flex-row min-h-[600px] ambient-shadow">
-          
-          {/* Information sidebar - Clinical Trust branding */}
+        <div className="bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-outline-variant/30 flex flex-col lg:flex-row min-h-[600px] ambient-shadow">
           <div className="lg:w-2/5 p-8 lg:p-12 bg-secondary text-white space-y-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-primary-container/20 blur-3xl pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-            
+
             <div className="space-y-6 relative z-10">
-              <span className="px-3 py-1 text-xs font-bold uppercase tracking-widest bg-white/10 text-primary-container rounded-full border border-white/10">
-                Orçamento Sem Compromisso
+              <span className="px-3 py-1 text-xs font-black uppercase tracking-[0.24em] bg-white/10 text-primary-container rounded-full border border-white/10">
+                Orçamento personalizado
               </span>
-              <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight">
-                Peça seu orçamento online
+              <h2 className="text-3xl lg:text-4xl font-black tracking-tight leading-tight">
+                Solicite seu orçamento agora.
               </h2>
-              <p className="text-white/80 text-lg leading-relaxed font-light">
-                Preencha seus dados básicos e anexe a receita médica ou a foto dela. Nossa equipe farmacêutica especialista iniciará a cotação imediatamente.
+              <p className="text-white/85 text-lg leading-relaxed font-light">
+                Envie sua receita ou solicitação. Nossa equipe fará a conferência farmacêutica e retornará com atendimento ágil e consultivo.
               </p>
             </div>
 
@@ -63,8 +62,8 @@ export default function PrescriptionForm() {
               <div className="flex items-start gap-3.5">
                 <CheckCircle2 className="w-5 h-5 text-primary-container shrink-0 mt-0.5" />
                 <div className="text-sm">
-                  <p className="font-bold">Análise Técnica Técnica</p>
-                  <p className="text-white/70">Farmacêuticos revisam dosagens e interações.</p>
+                  <p className="font-bold">Conferência farmacêutica</p>
+                  <p className="text-white/70">Prescrição analisada cuidadosamente antes do orçamento.</p>
                 </div>
               </div>
 
@@ -72,52 +71,50 @@ export default function PrescriptionForm() {
                 <CheckCircle2 className="w-5 h-5 text-primary-container shrink-0 mt-0.5" />
                 <div className="text-sm">
                   <p className="font-bold">Agilidade pelo WhatsApp</p>
-                  <p className="text-white/70">Receba sua cotação e tire dúvidas rapidamente.</p>
+                  <p className="text-white/70">Retorno rápido para tirar dúvidas e finalizar o pedido.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3.5">
                 <CheckCircle2 className="w-5 h-5 text-primary-container shrink-0 mt-0.5" />
                 <div className="text-sm">
-                  <p className="font-bold">Privacidade Total</p>
-                  <p className="text-white/70">Seus dados e receitas guardados com sigilo médico.</p>
+                  <p className="font-bold">Confidencialidade</p>
+                  <p className="text-white/70">Dados e receitas tratados com cuidado e sigilo.</p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-white/10 relative z-10 flex items-center gap-4 text-xs text-white/60">
-              <ShieldCheck className="w-5 h-5 text-[#43d8f2]" />
-              <span>Certificação de Qualidade Dr.Phormula • 100% Seguro</span>
+            <div className="pt-6 border-t border-white/10 relative z-10 flex items-center gap-4 text-xs text-white/70">
+              <ShieldCheck className="w-5 h-5 text-primary-container" />
+              <span>Atendimento humanizado, orientação farmacêutica e envio para todo o Brasil.</span>
             </div>
           </div>
 
-          {/* Form Content Side */}
           <div className="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
             {uploadState.success ? (
-              /* High Fidelity Success Message State */
               <div className="text-center space-y-6 max-w-md mx-auto py-8">
                 <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-500 scale-105 border border-emerald-100 float-anim">
                   <FileCheck className="w-10 h-10" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-on-surface">
+                  <h3 className="text-2xl font-black text-on-surface">
                     Receita enviada com sucesso!
                   </h3>
                   <p className="text-on-surface-variant font-light">
-                    Olá, <strong>{formData.fullName}</strong>. Iniciamos a conferência técnica da sua receita.
+                    Olá, <strong>{formData.fullName}</strong>. Iniciamos a conferência técnica da sua solicitação.
                   </p>
                 </div>
 
                 <div className="p-4 rounded-xl bg-surface-container-low border border-primary-container/20 text-left space-y-3">
-                  <div className="flex items-center gap-2 font-medium text-on-secondary-container">
+                  <div className="flex items-center gap-2 font-bold text-secondary">
                     <CheckCircle2 className="w-4 h-4 text-primary" />
-                    <span>Próximos Passos:</span>
+                    <span>Próximos passos:</span>
                   </div>
                   <ul className="text-sm text-on-surface-variant/90 space-y-2 pl-4 list-disc font-light">
-                    <li>Análise de compatibilidade e posologia farmacêutica.</li>
-                    <li>Cotação dos melhores insumos certificados.</li>
+                    <li>Conferência farmacêutica da prescrição recebida.</li>
+                    <li>Verificação de disponibilidade e composição dos insumos.</li>
                     <li>
-                      Envio do orçamento diretamente para <strong>{formData.whatsapp}</strong> em até{" "}
+                      Retorno do orçamento diretamente para <strong>{formData.whatsapp}</strong> em até{" "}
                       <strong>{uploadState.estimatedTime}</strong>.
                     </li>
                   </ul>
@@ -129,31 +126,33 @@ export default function PrescriptionForm() {
                     className="w-full"
                     onClick={resetForm}
                   >
-                    Enviar Outra Receita
+                    Enviar outra receita
                   </Button>
                   <a
-                    href={`https://wa.me/557930000000?text=Olá, enviei minha receita pelo site de nome ${encodeURIComponent(
+                    href={`https://wa.me/557930000000?text=Olá, enviei minha receita pelo site em nome de ${encodeURIComponent(
                       formData.fullName
-                    )} e gostaria de agilizar o orçamento.`}
+                    )} e gostaria de acompanhar meu orçamento.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
                   >
                     <Button variant="secondary" className="w-full" leftIcon={<PhoneCall className="w-4 h-4" />}>
-                      Falar Conosco
+                      Falar no WhatsApp
                     </Button>
                   </a>
                 </div>
               </div>
             ) : (
-              /* Core Form State */
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-1">
-                  <h3 className="text-2xl font-bold text-on-surface">
-                    Cadastre seus dados e receita
+                <div className="space-y-2">
+                  <span className="text-primary text-xs font-black uppercase tracking-[0.24em] block">
+                    Envio de receita
+                  </span>
+                  <h3 className="text-2xl lg:text-3xl font-black text-secondary">
+                    Cadastre seus dados e solicite seu orçamento
                   </h3>
                   <p className="text-on-surface-variant text-sm font-light">
-                    Todos os orçamentos são finalizados por especialistas competentes.
+                    Todos os orçamentos são finalizados por nossa equipe de atendimento e conferência farmacêutica.
                   </p>
                 </div>
 
@@ -185,10 +184,9 @@ export default function PrescriptionForm() {
                   />
                 </div>
 
-                {/* File handling region */}
                 <div className="space-y-2">
                   <label className="font-semibold text-sm text-on-surface/80 tracking-wide block">
-                    Sua Receita Médica (PDF, Imagem ou Foto tirada)
+                    Receita médica ou solicitação (PDF, imagem ou foto)
                   </label>
 
                   <input
@@ -205,7 +203,6 @@ export default function PrescriptionForm() {
                   />
 
                   {formData.file ? (
-                    /* Display Selected File Details */
                     <div className="border border-outline-variant rounded-xl p-4 bg-surface-container-low flex items-center justify-between transition-colors animate-fade-in">
                       <div className="flex items-center gap-3 overflow-hidden">
                         <div className="w-10 h-10 bg-primary-container/10 rounded-lg flex items-center justify-center text-primary-container shrink-0">
@@ -230,7 +227,6 @@ export default function PrescriptionForm() {
                       </button>
                     </div>
                   ) : (
-                    /* Interactive Drag and Drop Container */
                     <div
                       onDragOver={onDragOver}
                       onDragLeave={onDragLeave}
@@ -255,22 +251,20 @@ export default function PrescriptionForm() {
                   )}
                 </div>
 
-                {/* Additional notes/comments */}
                 <Textarea
                   label="Observações adicionais (Opcional)"
                   name="notes"
                   rows={3}
-                  placeholder="Ex: Gostaria de cápsulas veganas, preferência por entrega amanhã ou alguma receita associada."
+                  placeholder="Ex: preferência de forma farmacêutica, prazo desejado ou observações da prescrição."
                   value={formData.notes}
                   onChange={handleInputChange}
                   disabled={uploadState.loading}
                 />
 
-                {/* Simulated file upload loading indicator */}
                 {uploadState.loading && (
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs font-semibold text-primary">
-                      <span>Criptografando e enviando receita de forma segura...</span>
+                      <span>Enviando sua solicitação de forma segura...</span>
                       <span>{uploadProgress}%</span>
                     </div>
                     <div className="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
@@ -282,7 +276,6 @@ export default function PrescriptionForm() {
                   </div>
                 )}
 
-                {/* Submission core action */}
                 <Button
                   type="submit"
                   variant="primary"
@@ -290,12 +283,12 @@ export default function PrescriptionForm() {
                   className="py-4"
                   isLoading={uploadState.loading}
                 >
-                  Enviar para Cotação Rápida
+                  Solicitar Orçamento
                 </Button>
 
                 <div className="flex items-center justify-center gap-1.5 text-xs text-on-surface-variant/80">
                   <HelpCircle className="w-3.5 h-3.5" />
-                  <span>Dúvidas no envio? Ligue para fone (79) 3000-0000</span>
+                  <span>Dúvidas no envio? Fale com nossa equipe pelo WhatsApp.</span>
                 </div>
               </form>
             )}
