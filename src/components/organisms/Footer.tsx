@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import { Mail, Phone, MapPin, Clock, Send, HeartHandshake } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, ShieldCheck } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -42,12 +42,10 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="bg-secondary text-white pt-20 pb-8 relative overflow-hidden">
-      {/* Visual background pattern overlays */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/2 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative z-10 text-left">
-        
-        {/* Brand identity */}
         <div className="space-y-6">
           <a
             href="#"
@@ -65,7 +63,7 @@ export default function Footer() {
             />
           </a>
           <p className="text-white/85 text-sm leading-relaxed font-light">
-            Cuidado personalizado, segurança técnica certificada e a exatidão farmacêutica ideal a serviço da sua saúde e qualidade de vida.
+            Saúde na medida exata, com fórmulas personalizadas, rigor farmacêutico, tecnologia e atendimento humanizado.
           </p>
           <div className="flex gap-3">
             <a
@@ -78,10 +76,10 @@ export default function Footer() {
               <InstagramIcon className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/557930000000"
+              href="https://wa.me/557930000000?text=Olá, Dr.Phormula! Gostaria de solicitar um orçamento."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all animate-pulse"
+              className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-all"
               aria-label="Fale no WhatsApp"
             >
               <Send className="w-5 h-5" />
@@ -89,7 +87,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links navigation */}
         <div className="space-y-6">
           <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Navegação
@@ -101,7 +98,16 @@ export default function Footer() {
                 onClick={(e) => handleScrollToSection(e, "#quality")}
                 className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
-                Qualidade Técnica
+                Quem Somos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#medical"
+                onClick={(e) => handleScrollToSection(e, "#medical")}
+                className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
+              >
+                Para Prescritores
               </a>
             </li>
             <li>
@@ -110,7 +116,7 @@ export default function Footer() {
                 onClick={(e) => handleScrollToSection(e, "#services")}
                 className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
-                Especialidades
+                Especialidades e Diferenciais
               </a>
             </li>
             <li>
@@ -119,7 +125,7 @@ export default function Footer() {
                 onClick={(e) => handleScrollToSection(e, "#process")}
                 className="text-white/85 hover:text-white hover:translate-x-1 transition-all inline-block font-light"
               >
-                Como Funciona seu Pedido
+                Padrão de Qualidade
               </a>
             </li>
             <li>
@@ -134,7 +140,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact info detail */}
         <div className="space-y-6 text-left">
           <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Contato & Endereço
@@ -159,7 +164,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Timing calendar and Technical Resp. responsibility */}
         <div className="space-y-6">
           <h2 className="text-lg font-bold text-white border-b border-white/10 pb-2">
             Expediente
@@ -179,22 +183,20 @@ export default function Footer() {
             </li>
           </ul>
 
-          {/* Technical responsibility compliance card */}
           <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs">
             <div className="flex items-center gap-2 mb-1.5 font-bold text-primary-container">
-              <HeartHandshake className="w-4 h-4" />
-              <span>Farmacêutico Responsável</span>
+              <ShieldCheck className="w-4 h-4" />
+              <span>Responsabilidade técnica</span>
             </div>
-            <p className="text-white/90">Dr. Ricardo Macedo Santos</p>
-            <p className="text-white/75 font-light">CRF/SE nº 1234 • CRF Regional</p>
+            <p className="text-white/90 leading-relaxed">
+              Informações oficiais de responsável técnico e registros regulatórios devem ser preenchidas após validação documental.
+            </p>
           </div>
         </div>
-
       </div>
 
-      {/* Copy definitions line bottom */}
       <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/90 relative z-10 text-left">
-        <p>© 2026 Dr.Phormula. Precision Compounding Pharmacy. Todos os direitos reservados.</p>
+        <p>© 2026 Dr.Phormula. Saúde na medida exata. Todos os direitos reservados.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
           <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
