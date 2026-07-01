@@ -1,110 +1,121 @@
-import { Timer, ArrowRight, ShieldAlert, Sparkles, SendToBack, Truck } from "lucide-react";
+import { Award, CheckCircle2, ShieldCheck, Timer } from "lucide-react";
 
 export default function ProcessTimeline() {
-  const steps = [
-    {
-      number: "1",
-      title: "Envie sua receita",
-      description: "Tire uma fotografia legível ou faça o upload direto do arquivo digital (PDF ou imagem) da sua prescrição no formulário.",
-      color: "border-primary-container",
-    },
-    {
-      number: "2",
-      title: "Análise Técnica Rigorosa",
-      description: "Profissionais farmacêuticos competentes avaliam minuciosamente dosagens, posologia e possíveis incompatibilidades químicas.",
-      color: "border-primary",
-    },
-    {
-      number: "3",
-      title: "Manipulação de Precisão",
-      description: "Sua fórmula é pesada e produzida em laboratório de atmosfera estéril computadorizado com controle pleno de temperatura e umidade.",
-      color: "border-secondary",
-    },
-    {
-      number: "4",
-      title: "Entrega Rápida e Segura",
-      description: "Despachamos em embalagens blindadas contra luz de forma ágil, diretamente para o conforto da sua residência.",
-      color: "border-emerald-500",
-    },
+  const processItems = [
+    "Identificação correta da prescrição",
+    "Conferência farmacêutica",
+    "Pesagem precisa",
+    "Manipulação segura",
+    "Controle de qualidade",
+    "Embalagem adequada",
+    "Orientação farmacêutica",
+  ];
+
+  const qualityStandards = [
+    "Farmacêuticos responsáveis tecnicamente habilitados",
+    "Matérias-primas de fornecedores homologados",
+    "Procedimentos Operacionais Padronizados (POPs)",
+    "Equipamentos calibrados",
+    "Rastreabilidade completa dos lotes",
+    "Controle de qualidade em todas as etapas",
+    "Atendimento técnico ao prescritor",
+    "Compromisso com a melhoria contínua",
   ];
 
   return (
-    <section id="process" className="py-24 bg-surface-container-low overflow-hidden border-b border-outline-variant/10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
-        {/* Left column: Visual display featuring real-laboratory process and float mac-badge */}
-        <div className="lg:col-span-5 relative w-full flex items-center justify-center">
-          <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/20 ambient-shadow">
-            <img
-              alt="Farmacêutico manipulando fórmula com absoluto controle estéril em laboratório"
-              className="w-full h-full object-cover filter brightness-95"
-              src="/images/processo-laboratorio.webp"
-              width="720"
-              height="900"
-              loading="lazy"
-              decoding="async"
-            />
-            
-            {/* Soft Translucent macOS overlay banner */}
-            <div className="absolute bottom-6 left-6 right-6 glass p-6 rounded-2xl border border-white/20 shadow-xl float-anim">
-              <div className="flex items-center gap-4 text-left">
-                <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-full text-white shrink-0 shadow-lg shadow-primary/20">
-                  <Timer className="w-6 h-6 animate-pulse" />
-                </div>
-                <div>
-                  <p className="text-on-surface font-extrabold text-sm">Produção Expressa</p>
-                  <p className="text-primary text-2xl font-black tracking-tight mt-0.5">Até 24 Horas</p>
-                  <p className="text-on-surface-variant/80 text-[11px] font-medium leading-none mt-1">
-                    Pronto para envio ou retirada rápido.
-                  </p>
+    <section id="process" className="py-20 lg:py-24 bg-surface-container-low overflow-hidden border-y border-outline-variant/20">
+      <div className="max-w-7xl mx-auto px-6 space-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 relative w-full flex items-center justify-center">
+            <div className="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-white/70 bg-white p-2 ambient-shadow">
+              <img
+                alt="Processo técnico de manipulação farmacêutica em laboratório"
+                className="w-full h-full object-cover rounded-[1.5rem] brightness-105"
+                src="/images/processo-laboratorio.webp"
+                width="720"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div className="absolute bottom-6 left-6 right-6 bg-white/92 backdrop-blur-md p-6 rounded-3xl border border-white/80 shadow-xl">
+                <div className="flex items-center gap-4 text-left">
+                  <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-2xl text-white shrink-0 shadow-lg shadow-primary/20">
+                    <Timer className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-secondary font-black text-sm uppercase tracking-wide">Excelência em cada detalhe</p>
+                    <p className="text-on-surface-variant text-xs leading-relaxed mt-1">
+                      Processo cuidadosamente monitorado para entregar segurança e precisão.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Right column: The vertical sequence timeline of user journey */}
-        <div className="lg:col-span-7 space-y-12 text-left">
-          <div className="space-y-4">
-            <span className="text-primary text-xs font-bold uppercase tracking-widest block">
-              Processo de Atendimento Certificado
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-on-surface tracking-tight leading-tight">
-              Como funciona seu pedido, do envio até você
-            </h2>
-            <p className="text-on-surface-variant font-light text-base lg:text-lg">
-              Nossa esteira técnica é otimizada por processos automatizados para entregar segurança molecular sem abrir mão da eficiência operacional.
+          <div className="lg:col-span-7 space-y-8 text-left">
+            <div className="space-y-5">
+              <span className="text-primary text-xs font-black uppercase tracking-[0.24em] block">
+                Nosso compromisso
+              </span>
+              <h2 className="text-3xl lg:text-5xl font-black text-secondary tracking-tight leading-tight">
+                Excelência em cada detalhe.
+              </h2>
+              <p className="text-on-surface-variant text-base lg:text-lg leading-relaxed">
+                Cada fórmula produzida passa por um processo cuidadosamente monitorado para garantir segurança, precisão e qualidade em todas as etapas.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {processItems.map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 border border-outline-variant/25 shadow-sm">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-sm font-semibold text-on-surface">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-secondary font-black text-lg">
+              Porque quando falamos de saúde, cada detalhe importa.
             </p>
           </div>
-
-          <div className="space-y-6 relative">
-            {/* Absolute indicator line linking steps */}
-            <div className="absolute left-6 top-3 bottom-3 w-0.5 bg-outline-variant/30 hidden sm:block pointer-events-none" />
-
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group transition-all"
-              >
-                {/* Numeric Indicator */}
-                <div className="w-12 h-12 rounded-full bg-white border-2 border-primary-container text-primary flex items-center justify-center font-extrabold text-lg shadow-md shrink-0 z-10 group-hover:scale-105 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                  {step.number}
-                </div>
-
-                {/* Card describing step */}
-                <div className="bg-white p-6 rounded-2xl border border-outline-variant/20 shadow-sm group-hover:shadow-md group-hover:translate-x-1.5 transition-all duration-250 flex-1 text-left">
-                  <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-on-surface-variant text-sm font-light leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
+        <div className="rounded-[2rem] bg-white border border-outline-variant/25 shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-4 bg-secondary text-white p-8 lg:p-10 text-left relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-primary-container/20 blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-white/10 text-primary-container flex items-center justify-center mb-6">
+                  <Award className="w-7 h-7" />
+                </div>
+                <span className="text-primary-container text-xs font-black uppercase tracking-[0.24em] block">
+                  Nosso padrão de qualidade
+                </span>
+                <h2 className="text-3xl lg:text-4xl font-black leading-tight mt-4">
+                  Profissionalismo sem promessas frágeis.
+                </h2>
+                <p className="text-white/85 leading-relaxed mt-5">
+                  Uma comunicação técnica e responsável aumenta a credibilidade com prescritores e pacientes.
+                </p>
+              </div>
+              <div className="relative z-10 mt-8 inline-flex items-center gap-2 text-primary-container text-sm font-bold">
+                <ShieldCheck className="w-5 h-5" />
+                <span>Qualidade como rotina diária</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-8 p-6 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {qualityStandards.map((standard) => (
+                <div key={standard} className="flex items-start gap-3 rounded-2xl bg-surface-container-low border border-outline-variant/20 p-4 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-sm font-bold text-on-surface">{standard}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
