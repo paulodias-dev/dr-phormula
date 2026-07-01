@@ -9,6 +9,7 @@ import TrustPartners from "./components/organisms/TrustPartners";
 import Footer from "./components/organisms/Footer";
 import SEO from "./components/SEO";
 import { homePageStructuredData } from "./seo/structuredData";
+import ScrollToTopButton from "./components/atoms/ScrollToTopButton";
 
 export default function App() {
   return (
@@ -90,6 +91,7 @@ export default function App() {
 
       {/* Corporate compliant footer */}
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
